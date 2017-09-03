@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("php/conexao.php"); ?>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
