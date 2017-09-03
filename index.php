@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include("php/conexao.php"); ?>
+<?php include("php/conexao.php"); 
+		session_start();
+?>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -35,13 +37,29 @@
 					<div class="container-fluid">
 
 						<div class="login">
-							<form action="" method="" accept-charset="utf-8" class="form-login">
-							<h3 class="form-login-heading">Entre com suas credenciais</h3>
-							<label for="inputMatric">Matricula</label>
-							<input type="email" id="inputMatric" class="form-control" placeholde="Matric"
-							<label for="inputEmail">Email Corporativo</label>
+							<form name="loginform" action="php/userauthen.php" method="POST" accept-charset="utf-8" class="form-login">
+							
+								<h3 class="form-login-heading">Entre com suas credenciais</h3>
 
-							<input type="email" id="inputEmail" class="form-control" placeholde="Email" required autofocus>
+								<label for="inputMatr">Matricula</label>
+								<input type="" id="iputMatr" name="matr" class="form-control" placeholder="Matricula"  required autofocus>
+								<label for="inputEmail">Email Corporativo</label>
+
+								<input type="text" id="inputEmail" name="login" class="form-control" placeholder="Email">
+								<input type="submit" value="Entrar" />
+
+							</form>
+							
+							<p class="text-center text-danger">
+								<?php if(isset($_SESSION['loginErro'])){
+									echo $_SESSION['loginErro'];
+									unset ($_SESSION['loginErro']);
+
+									if(empty($resultado)){
+										echo "ok";
+									}
+								}?>
+							</p>
 						</div>
 							<div class="navbar-brand" >
 			
@@ -50,6 +68,7 @@
 						</div>
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
+								
 								<li role="presentation" class="active"><a href="index.html">Home</a></li>
 								<li role="presentation"><a href="blog.html">blog</a></li>
 								<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
