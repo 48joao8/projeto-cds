@@ -21,6 +21,8 @@ a:hover {
 	text-decoration:none;	
 }
 
+
+
 .navbar-default {
 	background-color: #fff;
 	border-radius:0;
@@ -150,6 +152,14 @@ button.btn-primary h2 {
 	background-color:#fff;
 	padding:50px;
 	text-align:center;
+	color:#50c0e9;	
+}
+
+n.catalog {
+	background-color:#fff;
+	padding:20px;
+	margin-top: 300px;
+	text-align:left;
 	color:#50c0e9;	
 }
 .contents p {
@@ -607,7 +617,3 @@ footer ul.link-list li a:hover {
 footer .widget ul li a {
 	color:#000;
 }
-
-
-
-
