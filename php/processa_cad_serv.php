@@ -1,13 +1,15 @@
 <?php
 	include("conexao.php");
 
-	$login_usu = $_POST['txt_login'];
-	$senha_usu = $_POST['txt_senha'];
-	$matr_usu = $_POST['txt_matr'];
-	$nome_usu = $_POST['txt_nome'];
+	$nome_serv = $_POST['txt_nome_serv'];
+	$decserv_serv = $_POST['txt_decserv'];
+	$descresp_usu = $_POST['txt_descresp'];
+	$tar1_serv = $_POST['serv_tar1']
+	$tar2_serv = $_POST['serv_tar2']
+	$tar3_serv = $_POST['serv_tar3'];
 
-	$result_usu = "INSERT INTO usuarios (usuemail,usumat,ususenha,usunome) VALUES ('$login_usu','$matr_usu','$senha_usu','nome_usu')";
-	$resultado_usuario = mysqli_query($mysqli, $result_usu);
+	$result_serv = "INSERT INTO servicos (servname,servdesc,servresp,taref1,taref2,taref3) VALUES ('$nome_serv','$decserv_serv','$descresp_usu','tar1_serv','tar2_serv','tar3_serv')";
+	$resultado_serv = mysqli_query($mysqli, $result_serv);
 	if(mysqli_affected_rows($mysqli) !=0){
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0; URL =

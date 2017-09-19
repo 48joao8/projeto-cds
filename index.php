@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<?php include("php/conexao.php"); 
-		session_start();
+<?php
+	include("php/conexao.php"); 
+	
 ?>
 <html lang="pt-br">
   <head>
@@ -42,10 +43,14 @@
 								<h3 class="form-login-heading">Entre com suas credenciais</h3>
 
 								<label for="inputMatr">Matricula</label>
-								<input type="" id="iputMatr" name="matr" class="form-control" placeholder="Matricula"  required autofocus>
-								<label for="inputEmail">Email Corporativo</label>
+								<p><input type="" id="inputMatr" name="matr" class="form-control" placeholder="Matricula"  required autofocus></p>
+								<label for="inputEmail" placeholder="E-mail" type="text" name="login">Email Corporativo</label>
+								<p><input value="" type="text" id="inputEmail" name="login" class="form-control" placeholder="Email"></p>
+								<label for="inputSenha" type="password"></label>
+								<p><input id="inputSenha" name="senha" type="password" placeholder="Senha" class="form-control"></p>
+								<a href="">Esqueceu sua senha?</a>
 
-								<input type="text" id="inputEmail" name="login" class="form-control" placeholder="Email">
+								
 								<input type="submit" value="Entrar" />
 
 							</form>

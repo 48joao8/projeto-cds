@@ -3,7 +3,7 @@
 $host="localhost";
 $usuario="root";
 $senha="";
-$bd="cadastro";
+$bd="cadcds";
 
 
 $mysqli= new mysqli($host, $usuario, $senha, $bd);

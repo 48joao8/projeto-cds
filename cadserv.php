@@ -3,7 +3,6 @@
 //	echo "Usuario: ". $_SESSION['userLogin'];
 
 
-
  ?>
 
 <html lang="pt-br">
@@ -43,7 +42,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toogle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opções<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="cadserv.php">Postar</a></li>
+							<li><a href="#">Postar</a></li>
 							<li><a href="#">Alterar</a></li>
 							<li><a href="#">Excluir</a></li>
 							<li role="separator" class="divider"></li>
@@ -59,13 +58,20 @@
 		</div>
 	</nav>
 
-		<div class="container theme-showcase" role="main">
-			<div class="jumbotron">
-				<h1>Theme example</h1>
-				<p>this is a template showcasing the optional theme</p>
-			</div>
+	
 
-		</div>
+
+		<div class="container">
+			<form method="POST" action="php\processa_cad_serv.php">
+ 				Nome do Serviço<input type="text" name="txt_nome_serv" placeholder="Nome" maxlength="15" class="form-control"><br><br>
+ 				Descrição do Serviço<input type="text" name="txt_decserv" placeholder="Descrição" maxlength="30" class="form-control"><br><br>
+ 				Responsável pelo Serviço<input type="password" name="txt_descresp" placeholder="Responsável" maxlength="15" class="form-control"><br><br>
+				1º Tarefa a ser realizada<input type="text" name="serv_tar1" placeholder="Tarefa" class="form-control"><br><br>
+				2º Tarefa a ser realizada<input type="text" name="serv_tar2" placeholder="Tarefa" class="form-control"><br><br>
+				3º Tarefa a ser realizada<input type="text" name="serv_tar3" placeholder="Tarefa" class="form-control"><br><br>
+ 				<input type="submit" value="Cadastrar">
+ 			</form>
+ 		</div>
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
