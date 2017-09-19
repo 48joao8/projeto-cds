@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 	include("php/conexao.php"); 
+
 	
 ?>
 <html lang="pt-br">
@@ -59,11 +60,9 @@
 								<?php if(isset($_SESSION['loginErro'])){
 									echo $_SESSION['loginErro'];
 									unset ($_SESSION['loginErro']);
-
-									if(empty($resultado)){
-										echo "ok";
 									}
-								}?>
+									
+								?>
 							</p>
 						</div>
 							<div class="navbar-brand" >

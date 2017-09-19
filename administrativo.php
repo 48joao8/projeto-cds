@@ -1,7 +1,8 @@
  <?php
 	session_start();
-//	echo "Usuario: ". $_SESSION['userLogin'];
-
+	
+		echo $_SESSION['matr'];
+	
 
 
  ?>

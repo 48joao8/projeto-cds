@@ -1,11 +1,13 @@
 <?php include("conexao.php"); 
 	if(isset($_POST['login']) && strlen($_POST['login']) >0){
-		if(!isset($_SESSION))
-		session_start();}
+		session_start();
+		
+
 
 
 	if((isset($_POST['matr'])) && (isset($_POST['login']))){
 		$matr = mysqli_real_escape_string($mysqli, $_POST['matr']);
+
 		$login = mysqli_real_escape_string($mysqli, $_POST['login']);
 	
 		$senha = md5(($_POST['senha']));
@@ -14,15 +16,18 @@
 		$result = mysqli_query($mysqli, $sql);
 		$resultado = mysqli_fetch_assoc ($result);
 
+		
+		
 
 		if(empty($resultado)){
 			$_SESSION['loginErro'] ="Usuário ou senha inválidada";
-			echo "Erro";
-			//header("Location: ..\index.php");
+			
+			header("Location: ..\index.php");
 			}elseif(isset($resultado)){
-
+				$_SESSION['matr'] = $matr;
+				
 				//$_SESSION['usuemail'] = $resultado[login];
-				//$_SESSION['usumat'] = $resultado[matr];
+				
 
 				header("Location: ..\administrativo.php");
 			}else{
@@ -39,7 +44,7 @@
 			}
 
 
-	
+	}
 
 
 ?>

@@ -1,8 +1,7 @@
  <?php
-	session_start();
 //	echo "Usuario: ". $_SESSION['userLogin'];
-
-
+ session_start();
+ echo $_SESSION['matr'];
  ?>
 
 <html lang="pt-br">
@@ -63,9 +62,9 @@
 
 		<div class="container">
 			<form method="POST" action="php\processa_cad_serv.php">
- 				Nome do Serviço<input type="text" name="txt_nome_serv" placeholder="Nome" maxlength="15" class="form-control"><br><br>
+ 				Nome do Serviço<input type="text" name="txt_nome_serv" placeholder="Nome" maxlength="40 class="form-control"><br><br>
  				Descrição do Serviço<input type="text" name="txt_decserv" placeholder="Descrição" maxlength="30" class="form-control"><br><br>
- 				Responsável pelo Serviço<input type="password" name="txt_descresp" placeholder="Responsável" maxlength="15" class="form-control"><br><br>
+ 				Responsável pelo Serviço<input type="text" name="txt_descresp" placeholder="Responsável" maxlength="15" class="form-control"><br><br>
 				1º Tarefa a ser realizada<input type="text" name="serv_tar1" placeholder="Tarefa" class="form-control"><br><br>
 				2º Tarefa a ser realizada<input type="text" name="serv_tar2" placeholder="Tarefa" class="form-control"><br><br>
 				3º Tarefa a ser realizada<input type="text" name="serv_tar3" placeholder="Tarefa" class="form-control"><br><br>
