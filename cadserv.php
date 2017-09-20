@@ -1,7 +1,7 @@
  <?php
-//	echo "Usuario: ". $_SESSION['userLogin'];
+
  session_start();
- echo $_SESSION['matr'];
+
  ?>
 
 <html lang="pt-br">
@@ -35,13 +35,13 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="administrativo.php">Home</a></li>
 					<li><a href="cadastro.php">Cadastro</a></li>
 					<li><a href="php\sair.php">Sair</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toogle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opções<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Postar</a></li>
+							<li><a href="cadserv.php">Postar</a></li>
 							<li><a href="#">Alterar</a></li>
 							<li><a href="#">Excluir</a></li>
 							<li role="separator" class="divider"></li>
@@ -50,8 +50,6 @@
 						</ul>
 					</li>
 				</ul>
-
-
 
 			</div>
 		</div>

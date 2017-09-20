@@ -1,9 +1,10 @@
  <?php
 	session_start();
-	
-		echo $_SESSION['matr'];
-	
+	include("php/conexao.php");
 
+	$sql = "SELECT * from servicos";
+	$sql_query = $mysqli ->query($sql) or die ($mysqli->error);
+	$linha = $sql_query -> fetch_assoc();
 
  ?>
 
@@ -38,8 +39,8 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="cadastro.php">Cadastro</a></li>
+					<li class="active"><a href="administrativo.php">Home</a></li>
+					<li><a href="cadastro.php">Cadastro de Usuários</a></li>
 					<li><a href="php\sair.php">Sair</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toogle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opções<span class="caret"></span></a>
@@ -59,14 +60,56 @@
 			</div>
 		</div>
 	</nav>
+			
+
+
 
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
-				<h1>Theme example</h1>
-				<p>this is a template showcasing the optional theme</p>
+				<h1>Serviços Cadastrados</h1>
+				<p>Resumo das atividades da TI e regras para efetuação</p>
 			</div>
 
 		</div>
+
+	<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-default" role="navigation">
+						<table class="table">
+							  <thead class="thead-inverse">
+							    <tr>
+							      <th>N</th>
+							      <th>Nome</th>
+							      <th>Descrição</th>
+							      <th>Responsável</th>
+							      <th>Tarefa 1</th>
+							      <th>Tarefa 1</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							  <?php
+							  	do{
+							  ?>
+
+
+							    <tr>
+							      <td><?php echo $linha['servid']; ?></td>
+							      <td><?php echo $linha['servname']; ?></td>
+							      <td><?php echo $linha['servdesc']; ?></td>
+							      <td><?php echo $linha['servresp']; ?></td>
+							      <td><?php echo $linha['taref1']; ?></td>
+							      <td><?php echo $linha['taref2']; ?></td>
+							    </tr>
+							   <?php 
+							   }while ($linha = $sql_query -> fetch_assoc());
+
+							   ?>
+
+							  </tbody>
+						</table>
+					</nav>
+				</div>
+	</div>
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -3,16 +3,33 @@
 	session_start();
 	$usuatu = $_SESSION['matr'];
 
-	$_POST['serv_tar2'] = "teste";
 
 	$nome_serv = $_POST['txt_nome_serv'];
 	$decserv_serv = $_POST['txt_decserv'];
 	$descresp_usu = $_POST['txt_descresp'];
 	$tar1_serv = $_POST['serv_tar1'];
+	$tar2_serv = $_POST['serv_tar2'];
+	$tar3_serv = $_POST['serv_tar3'];
 
-	$result_serv = "INSERT INTO servicos (servname, servdesc, servresp, taref1, idusernew) VALUES ('$nome_serv','$decserv_serv','$descresp_usu','$tar1_serv','$usuatu')";
+	$result_serv = "INSERT INTO servicos (
+										servname,
+										servdesc,
+										servresp,
+										taref1,
+										taref2,
+										taref3,
+										idusernew,
+										iduseralt) 
+										VALUES ('$nome_serv',
+												'$decserv_serv',
+												'$descresp_usu',
+												'$tar1_serv',
+												'$tar2_serv',
+												'$tar3_serv',
+												'$usuatu',
+												'$usuatu')";
 	$resultado_serv = mysqli_query($mysqli, $result_serv);
-	/*
+	
 	if(mysqli_affected_rows($mysqli) !=0){
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0; URL =
@@ -29,6 +46,6 @@
 				alert(\"Usuario não foi cadastrado com sucesso.\");
 			</script>
 			";
-		}*/
+		}
 
 ?>
